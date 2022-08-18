@@ -1,0 +1,5 @@
+kakao.service.domain: http://localhost:8080
+
+file-name: "application-acceptance-test.yml"
+
+acceptance-file-name: "application-acceptance-test.yml"

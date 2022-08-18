@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  flyway:
+    enabled: false
+
+file-name: "application-test.yml"
+
+test-file-name: "application-test.yml"

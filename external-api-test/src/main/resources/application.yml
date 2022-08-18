@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    group:
+      "test": "test"
+      "acceptance-test": "test, acceptance-test"
+    include: "auth"
+
+kakao.service.domain: https://kauth.kakao.com
+
+file-name: "application.yml"
