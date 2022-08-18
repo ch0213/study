@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Table;
+import javax.persistence.metamodel.EntityType;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.annotation.Profile;
@@ -24,9 +25,22 @@ public class DatabaseCleanupV2 implements InitializingBean {
     @Override
     public void afterPropertiesSet() {
         tableNames = entityManager.getMetamodel().getEntities().stream()
-                .filter(it -> it.getJavaType().getDeclaredAnnotation(Table.class) != null)
-                .map(it -> it.getJavaType().getDeclaredAnnotation(Table.class).name())
+                .map(this::extractTableName)
                 .collect(Collectors.toList());
+    }
+
+    private String extractTableName(EntityType<?> it) {
+        Table declaredAnnotation = it.getJavaType().getDeclaredAnnotation(Table.class);
+        if (declaredAnnotation == null) {
+            return convertCamelToSnake(it.getName());
+        }
+        return declaredAnnotation.name();
+    }
+
+    private String convertCamelToSnake(String str){
+        String regex = "([a-z])([A-Z])";
+        String replacement = "$1_$2";
+        return str.replaceAll(regex, replacement).toLowerCase();
     }
 
     @Transactional
