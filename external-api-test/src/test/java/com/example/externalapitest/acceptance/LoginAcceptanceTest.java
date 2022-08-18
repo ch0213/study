@@ -6,17 +6,12 @@ import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.ActiveProfiles;
 
 import static com.example.externalapitest.fake.FakeKakaoApiController.token;
 import static org.assertj.core.api.Assertions.assertThat;
 
-@ActiveProfiles("acceptance-test")
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-class LoginAcceptanceTest {
-
+class LoginAcceptanceTest extends FakeApiAcceptanceTest {
     @DisplayName("로그인 기능 테스트")
     @Test
     void login() {
