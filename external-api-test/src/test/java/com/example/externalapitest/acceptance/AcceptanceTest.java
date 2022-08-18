@@ -1,4 +1,4 @@
-package com.example.externalapitest;
+package com.example.externalapitest.acceptance;
 
 import com.example.externalapitest.utils.DatabaseCleanup;
 import io.restassured.RestAssured;
