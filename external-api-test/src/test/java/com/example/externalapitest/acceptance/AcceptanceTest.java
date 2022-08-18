@@ -17,8 +17,6 @@ public class AcceptanceTest {
     @Autowired
     private DatabaseCleanup databaseCleanup;
 
-    String 관리자;
-
     @BeforeEach
     public void setUp() {
         RestAssured.port = port;
