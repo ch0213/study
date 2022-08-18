@@ -13,7 +13,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-@Profile("test")
+@Profile({"test", "acceptance-test"})
 @Service
 public class DatabaseCleanup implements InitializingBean {
     @Autowired
