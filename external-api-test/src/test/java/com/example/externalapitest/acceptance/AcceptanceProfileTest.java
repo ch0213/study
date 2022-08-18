@@ -20,9 +20,6 @@ class AcceptanceProfileTest extends FakeApiAcceptanceTest {
     @Value("${acceptance-file-name}")
     String acceptanceFileName;
 
-    /**
-     * 하나의 그룹이 여러 설정파일을 포함할 때 먼저 include한 설정 파일이 우선권을 가진다.
-     */
     @DisplayName("설정 파일명 확인")
     @Test
     void checkFileName() {
