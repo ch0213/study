@@ -29,10 +29,10 @@ public class DatabaseCleanupV2 implements InitializingBean {
                 .collect(Collectors.toList());
     }
 
-    private String extractTableName(EntityType<?> it) {
-        Table declaredAnnotation = it.getJavaType().getDeclaredAnnotation(Table.class);
+    private String extractTableName(EntityType<?> entity) {
+        Table declaredAnnotation = entity.getJavaType().getDeclaredAnnotation(Table.class);
         if (declaredAnnotation == null) {
-            return convertCamelToSnake(it.getName());
+            return convertCamelToSnake(entity.getName());
         }
         return declaredAnnotation.name();
     }
