@@ -42,7 +42,8 @@ tasks.named('test') {
  *      finalizedBy 'jacocoTestCoverageVerification'
  * }
  *
- * 를 통해 테스트가 실행될 때마다 작업을 수행할 수 있지만 번거로울 수 있다.
+ * 위와 같이 테스트가 실행될 때마다 작업을 수행할 수 있지만,
+ * 테스트만 실행하려고 했는데 리포트까지 생성되어 불편할 수 있으니 "testCoverage"로 통합하여 CI에서 수행하면 된다.
  */
 
 jacoco {
@@ -73,18 +74,28 @@ jacocoTestCoverageVerification {
         rule {
             element = 'CLASS'
 
+            // 브랜치 커버리지를 최소한 80% 만족시켜야 합니다.
             limit {
                 counter = 'BRANCH'
                 value = 'COVEREDRATIO'
                 minimum = 0.80
             }
 
+            // 라인 커버리지를 최소한 80% 만족시켜야 합니다.
             limit {
                 counter = 'LINE'
                 value = 'COVEREDRATIO'
                 minimum = 0.80
             }
 
+            // 빈 줄을 제외한 코드의 라인수를 최대 200라인으로 제한합니다.
+            limit {
+                counter = 'LINE'
+                value = 'TOTALCOUNT'
+                maximum = 200
+            }
+
+            // 메서드 커버리지를 최소한 80% 만족시켜야 합니다.
             limit {
                 counter = 'METHOD'
                 value = 'COVEREDRATIO'
