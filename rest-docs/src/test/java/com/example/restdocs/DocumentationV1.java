@@ -17,7 +17,6 @@ import static org.springframework.restdocs.operation.preprocess.Preprocessors.*;
 @ActiveProfiles("test")
 public class DocumentationV1 {
     private static final String HOST = "docs.api.com";
-    private static final int PORT = 443;
 
     @BeforeEach
     public void setUp(WebApplicationContext context, RestDocumentationContextProvider restDocumentation) {
@@ -25,11 +24,14 @@ public class DocumentationV1 {
     }
 
     /**
-     * 다음과 같이 port를 제거할 수도 있다.
+     * port를 제거할 수도 있다.
      * return preprocessRequest(modifyUris().removePort(), prettyPrint());
+     *
+     * port를 변경할 수도 있다.
+     * return preprocessRequest(modifyUris().host(HOST).port(443), prettyPrint());
      */
     protected static OperationRequestPreprocessor getDocumentRequest() {
-        return preprocessRequest(modifyUris().host(HOST).port(PORT), prettyPrint());
+        return preprocessRequest(modifyUris().host(HOST).removePort(), prettyPrint());
     }
 
     protected static OperationResponsePreprocessor getDocumentResponse() {
