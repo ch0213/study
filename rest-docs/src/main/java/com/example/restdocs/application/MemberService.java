@@ -1,5 +1,8 @@
-package com.example.restdocs;
+package com.example.restdocs.application;
 
+import com.example.restdocs.domain.Member;
+import com.example.restdocs.domain.MemberRepository;
+import com.example.restdocs.dto.MemberResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

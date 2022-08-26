@@ -1,4 +1,4 @@
-package com.example.restdocs;
+package com.example.restdocs.domain;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
