@@ -11,7 +11,7 @@ import org.springframework.http.MediaType;
 import static com.example.externalapitest.fake.FakeKakaoApiController.token;
 import static org.assertj.core.api.Assertions.assertThat;
 
-class LoginAcceptanceTest extends FakeApiAcceptanceTest {
+class LoginAcceptanceTestV1 extends FakeApiAcceptanceTest {
     @DisplayName("로그인 기능 테스트")
     @Test
     void login() {
