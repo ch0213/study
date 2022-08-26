@@ -1,0 +1,16 @@
+= Images API Document
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 1
+:sectlinks:
+:nofooter:
+
+*link:index.html[메인화면으로 돌아가기]*
+
+== 이미지 저장
+operation::images/save/v1[snippets='httpie-request,request-parts,request-parameters,http-response']
+
+== 이미지 조회
+operation::images/find/v1[snippets='http-request,request-parameters,http-response,response-fields']

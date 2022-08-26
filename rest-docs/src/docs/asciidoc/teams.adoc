@@ -1,0 +1,16 @@
+= Teams API Document
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 1
+:sectlinks:
+:nofooter:
+
+*link:index.html[메인화면으로 돌아가기]*
+
+== 팀 저장
+operation::teams/save/v1[snippets='http-request,request-parameters,http-response']
+
+== 팀 조회
+operation::teams/find/v1[snippets='http-request,path-parameters,http-response,response-fields']

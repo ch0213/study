@@ -1,0 +1,16 @@
+= Members API Document
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 1
+:sectlinks:
+:nofooter:
+
+*link:index.html[메인화면으로 돌아가기]*
+
+== 회원 가입
+operation::members/signup/v1[snippets='http-request,request-fields,http-response']
+
+== 회원 조회
+operation::members/find/v1[snippets='http-request,path-parameters,http-response,response-fields']
