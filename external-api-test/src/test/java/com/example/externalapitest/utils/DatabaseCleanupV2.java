@@ -22,6 +22,9 @@ public class DatabaseCleanupV2 implements InitializingBean {
 
     private List<String> tableNames;
 
+    /**
+     * .filter(it -> it.getJavaType().getDeclaredAnnotation(Entity.class) != null)
+     */
     @Override
     public void afterPropertiesSet() {
         tableNames = entityManager.getMetamodel().getEntities().stream()
