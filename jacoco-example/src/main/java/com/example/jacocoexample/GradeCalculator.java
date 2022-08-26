@@ -6,9 +6,13 @@ public class GradeCalculator {
     private static final int MAX_SCORE = 100;
     private static final int MIN_SCORE = 0;
 
-    public Grade calculate(int score) {
+    private GradeCalculator() {
+
+    }
+
+    public static Grade calculate(int score) {
         if (score > MAX_SCORE || score < MIN_SCORE) {
-            throw new IllegalArgumentException("잘못된 점수입니다.");
+            throw new IllegalArgumentException("점수는 " + MIN_SCORE + "~" + MAX_SCORE + "점 사이여야 합니다.");
         }
 
         if (score >= 90) {
