@@ -11,23 +11,23 @@ class AcceptanceProfileTest extends FakeApiAcceptanceTest {
     @Value("${secret-key}")
     String secretKey;
 
-    @Value("${file-name}")
-    String fileName;
+    @Value("${hello}")
+    String hello;
 
-    @Value("${test-file-name}")
-    String testFileName;
+    @Value("${test-hello}")
+    String testHello;
 
-    @Value("${acceptance-file-name}")
-    String acceptanceFileName;
+    @Value("${acceptance-test-hello}")
+    String acceptanceTestHello;
 
-    @DisplayName("설정 파일명 확인")
+    @DisplayName("설정 적용 확인")
     @Test
     void checkFileName() {
         assertAll(
                 () -> assertThat(secretKey).isEqualTo("secret-key"),
-                () -> assertThat(fileName).isEqualTo("application-test.yml"),
-                () -> assertThat(testFileName).isEqualTo("application-test.yml"),
-                () -> assertThat(acceptanceFileName).isEqualTo("application-acceptance-test.yml")
+                () -> assertThat(hello).isEqualTo("hello default"),
+                () -> assertThat(testHello).isEqualTo("hello test"),
+                () -> assertThat(acceptanceTestHello).isEqualTo("hello acceptance test")
         );
     }
 }

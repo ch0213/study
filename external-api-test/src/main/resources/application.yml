@@ -7,4 +7,4 @@ spring:
 
 kakao.service.domain: https://kauth.kakao.com
 
-file-name: "application.yml"
+hello: "hello default"

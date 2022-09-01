@@ -5,6 +5,4 @@ spring:
   flyway:
     enabled: false
 
-file-name: "application-test.yml"
-
-test-file-name: "application-test.yml"
+test-hello: "hello test"
