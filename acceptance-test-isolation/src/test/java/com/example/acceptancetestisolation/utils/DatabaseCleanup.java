@@ -1,22 +1,23 @@
-package com.example.externalapitest.utils;
+package com.example.acceptancetestisolation.utils;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Component;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Table;
 import javax.persistence.metamodel.EntityType;
 import javax.transaction.Transactional;
-import org.springframework.beans.factory.InitializingBean;
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * id 'org.springframework.boot' version '2.7.0' 이상일 때
  */
 @Profile("test")
 @Component
-public class DatabaseCleanupV2 implements InitializingBean {
+public class DatabaseCleanup implements InitializingBean {
     @PersistenceContext
     private EntityManager entityManager;
 
