@@ -37,4 +37,5 @@ out/
 .vscode/
 
 ### log ###
+backup
 log
